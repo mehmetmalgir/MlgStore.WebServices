@@ -19,9 +19,8 @@ namespace MlgStore.WebServices.API.Controllers
 
         [HttpGet]
         public List<Products> GetAll()
-        {
-            return _pBs.GetAllProducts();
-
+        {        
+            return _pBs.GetAllProducts(null, "Category", "Size", "Color", "ProductPhotos");
         }
 
 

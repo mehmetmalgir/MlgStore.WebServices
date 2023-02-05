@@ -21,8 +21,10 @@ namespace MlgStore.Model.Entities
         public int GenderID { get; set; }
 
         public Categories Category { get; set; }
-
         public ProductPhotos ProductPhotos { get; set; }
+        public Sizes Size { get; set; }
+        public Colors Color { get; set; }
+
 
 
     }
