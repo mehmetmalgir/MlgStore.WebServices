@@ -43,6 +43,11 @@ namespace MlgStore.Bussiness.Implementations
             return _repo.GetProductsByColor(colorId, includeList);  
         }
 
+        public List<Products> GetProductsByGender(int genderId, params string[] includeList)
+        {
+            return _repo.GetProductsByGender(genderId, includeList);
+        }
+
         public List<Products> GetProductsByPriceRange(int min, int max, params string[] includeList)
         {
             return _repo.GetProductsByPriceRange(min, max, includeList);

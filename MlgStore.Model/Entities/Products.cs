@@ -24,6 +24,7 @@ namespace MlgStore.Model.Entities
         public ProductPhotos ProductPhotos { get; set; }
         public Sizes Size { get; set; }
         public Colors Color { get; set; }
+        public Genders Gender { get; set; }
 
 
 

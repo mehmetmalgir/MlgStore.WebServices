@@ -29,14 +29,18 @@ namespace MlgStore.DataAccess.Implementations.EntityFramework.Repositories
             return GetAll(x => x.GenderID == genderId, includeList).ToList();
         }
 
-        public List<Products> GetProductsByPriceRange(int max, int min, params string[] includeList)
+        public List<Products> GetProductsByPriceRange(int min, int max, params string[] includeList)
         {
-            return GetAll(x => x.UnitPrice > max && x.UnitPrice < min, includeList).ToList();
+            return GetAll(x => x.UnitPrice > min && x.UnitPrice < max, includeList).ToList();
         }
 
         public List<Products> GetProductsBySize(int sizeId, params string[] includeList)
         {
-            return GetAll(x => x.SizeID== sizeId, includeList).ToList();
+            return GetAll(x => x.SizeID == sizeId, includeList).ToList();
         }
+
+
+
+
     }
 }

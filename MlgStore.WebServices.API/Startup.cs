@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MlgStore.Bussiness.Contracts;
 using MlgStore.Bussiness.Implementations;
+using MlgStore.Bussiness.Mappers.AutoMapper;
 using MlgStore.DataAccess.Contracts;
 using MlgStore.DataAccess.Implementations.EntityFramework.Repositories;
 using System;
@@ -52,7 +53,7 @@ namespace MlgStore.WebServices.API
             });
 
 
-
+            services.AddAutoMapper(typeof(ProductProfile));
 
 
 
