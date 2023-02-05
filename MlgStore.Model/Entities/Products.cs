@@ -20,7 +20,8 @@ namespace MlgStore.Model.Entities
         public bool CurrentOrder { get; set; }
         public int GenderID { get; set; }
 
-        public Categories Category { get; set; }
+        public Categories Categories { get; set; }
+
         public ProductPhotos ProductPhotos { get; set; }
 
 
