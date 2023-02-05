@@ -6,6 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MlgStore.Bussiness.Contracts;
+using MlgStore.Bussiness.Implementations;
+using MlgStore.DataAccess.Contracts;
+using MlgStore.DataAccess.Implementations.EntityFramework.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +30,13 @@ namespace MlgStore.WebServices.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<IProductBs, ProductBs>();
+            services.AddScoped<IProductRepository, EfProductRepository>();
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
