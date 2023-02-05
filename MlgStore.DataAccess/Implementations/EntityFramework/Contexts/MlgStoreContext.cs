@@ -13,7 +13,7 @@ namespace MlgStore.DataAccess.Implementations.EntityFramework.Contexts
             optionsBuilder.UseSqlServer("server=DESKTOP-NU8CUCN;database=MlgStoreDb;trusted_connection=true;");
         }
 
-        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Categories> Category { get; set; }
         public DbSet<Colors> Colors { get; set; }
         public DbSet<Complaints> Complaints { get; set; }
         public DbSet<Customers> Customers { get; set; }
