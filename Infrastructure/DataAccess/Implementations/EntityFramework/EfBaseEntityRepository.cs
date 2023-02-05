@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Infrastructure.DataAccess.Implementations.EntityFramework
 {
-    public class EfBaseEntityRepository<TEntity, TContext> : IEntityRepository<TEntity>
+    public abstract class EfBaseEntityRepository<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : BaseEntity, new()
         where TContext : DbContext, new()
     {
