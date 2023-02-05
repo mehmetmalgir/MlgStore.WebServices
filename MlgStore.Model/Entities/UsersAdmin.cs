@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MlgStore.Model.Entities
 {
-    public class UsersAdmin
+    public class UsersAdmin : BaseEntity
     {
-        public int Id { get; set; }
+        
         public string UserName { get; set; }
         public string Password { get; set; }
         public string FullName { get; set; }

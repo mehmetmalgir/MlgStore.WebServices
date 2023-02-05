@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MlgStore.Model.Entities
 {
-    public class Products
+    public class Products : BaseEntity
     {
-        public int Id { get; set; }
+       
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public int CategoryID { get; set; }

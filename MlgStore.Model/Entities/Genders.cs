@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MlgStore.Model.Entities
 {
-    public class Genders
+    public class Genders : BaseEntity
     {
-        public int Id { get; set; }
+        
         public string GenderType { get; set; }
 
 

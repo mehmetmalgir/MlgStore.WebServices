@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MlgStore.Model.Entities
 {
-    public class Customers
+    public class Customers : BaseEntity
     {
-        public int Id { get; set; }
+        
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address1 { get; set; }

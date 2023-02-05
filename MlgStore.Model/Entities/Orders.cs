@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MlgStore.Model.Entities
 {
-    public class Orders
+    public class Orders : BaseEntity
     {
-        public int Id { get; set; }
+       
         public int? CustomerID { get; set; }
         public long OrderNumber { get; set; }
         public DateTime? OrderDate { get; set; }

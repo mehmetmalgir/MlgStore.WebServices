@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MlgStore.Model.Entities
 {
-    public class Roles
+    public class Roles : BaseEntity
     {
-        public int Id { get; set; }
+        
         public string RoleType { get; set; }
 
     }
