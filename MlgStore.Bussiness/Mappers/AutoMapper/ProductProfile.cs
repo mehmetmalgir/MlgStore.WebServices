@@ -20,6 +20,8 @@ namespace MlgStore.Bussiness.Mappers.AutoMapper
                 .ForMember(dto => dto.Picture, entity => entity.MapFrom(x => x.ProductPhotos.Picture));
 
 
+            CreateMap<ProductForCreation, Products>();
+                
 
 
 

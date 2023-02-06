@@ -39,7 +39,10 @@ namespace MlgStore.DataAccess.Implementations.EntityFramework.Repositories
             return GetAll(x => x.SizeID == sizeId, includeList).ToList();
         }
 
-
+        public List<Products> GetProductsByStockRange(int min, int max, params string[] includeList)
+        {
+            return GetAll(x => x.QuantityPerUnit > min && x.QuantityPerUnit < max, includeList).ToList();
+        }
 
 
     }

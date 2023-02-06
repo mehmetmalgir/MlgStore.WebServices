@@ -53,6 +53,11 @@ namespace MlgStore.Bussiness.Implementations
             return _repo.GetProductsByPriceRange(min, max, includeList);
         }
 
+        public List<Products> GetProductsByStockRange(int min, int max, params string[] includeList)
+        {
+            return _repo.GetProductsByStockRange(min, max, includeList);
+        }
+
         public List<Products> GetProductsBySize(int sizeId, params string[] includeList)
         {
             return _repo.GetProductsBySize(sizeId, includeList);    

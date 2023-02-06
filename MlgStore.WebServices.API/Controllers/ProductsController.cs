@@ -214,8 +214,59 @@ namespace MlgStore.WebServices.API.Controllers
             }
         }
 
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(List<ProductGetDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpGet("getproductsbystock")]
+        public ActionResult<List<ProductGetDto>> GetProductsByStock(int min,int max)
+        {
 
+            try
+            {
+                if(min < 0 && max <0)
+                    return BadRequest("Girilen değerler 0'dan küçük olamaz.");
 
+                var products = _pBs.GetProductsByStockRange(min, max, "Category", "Size", "Color", "ProductPhotos", "Gender");
+
+                if (products == null)
+                    return NotFound("Girdiğiniz değerlere uygun ürünler bulunamadı");
+
+                var dtos = _mapper.Map<List<ProductGetDto>>(products);
+                return Ok(dtos);
+
+            }
+            catch 
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);                
+            }
+        }
+
+        [HttpDelete]
+        public void DeleteProduct(ProductGetDto deletedDto)
+        {
+            var productDto = _mapper.Map<Products>(deletedDto);
+            _pBs.Delete(productDto);
+        }
+
+        [HttpPut]
+        public void UpdateProduct(ProductGetDto updatedDto)
+        {
+            var productDto = _mapper.Map<Products>(updatedDto);
+            _pBs.Update(productDto);
+        }
+
+        [HttpPost]
+        public ActionResult<List<ProductGetDto>> AddProduct([FromQuery]ProductForCreation dto)
+        {
+            var product = _mapper.Map<Products>(dto);
+
+            var insertedProduct = _pBs.Insert(product);
+
+            var insertedDto = _mapper.Map<ProductGetDto>(insertedProduct);
+
+            return Created("", insertedDto);
+        }
 
 
 
