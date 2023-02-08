@@ -37,6 +37,8 @@ namespace MlgStore.WebServices.API
             services.AddScoped<IProductRepository, EfProductRepository>();
             services.AddScoped<ICategoryBs, CategoryBs>();
             services.AddScoped<ICategoryRepository, EfCategoryRepository>();
+            services.AddScoped<IShippersBs, ShippersBs>();
+            services.AddScoped<IShippersRepository, EfShippersRepository>();
 
             services.AddSwaggerGen(c =>
             {
