@@ -9,11 +9,11 @@ using System.Text;
 
 namespace MlgStore.Bussiness.Implementations
 {
-    public class CategoryBs : ICategoryBs
+    public class EfCategoryBs : ICategoryBs
     {
         private readonly ICategoryRepository _repo;
 
-        public CategoryBs(ICategoryRepository repo)
+        public EfCategoryBs(ICategoryRepository repo)
         {
             _repo= repo;
         }

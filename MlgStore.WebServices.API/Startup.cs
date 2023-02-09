@@ -33,12 +33,18 @@ namespace MlgStore.WebServices.API
         {
             services.AddControllers();
 
-            services.AddScoped<IProductBs, ProductBs>();
+            services.AddScoped<IProductBs, EfProductBs>();
             services.AddScoped<IProductRepository, EfProductRepository>();
-            services.AddScoped<ICategoryBs, CategoryBs>();
+            services.AddScoped<ICategoryBs, EfCategoryBs>();
             services.AddScoped<ICategoryRepository, EfCategoryRepository>();
-            services.AddScoped<IShippersBs, ShippersBs>();
+            services.AddScoped<IShippersBs, EfShippersBs>();
             services.AddScoped<IShippersRepository, EfShippersRepository>();
+            services.AddScoped<IGendersBs, EfGendersBs>();
+            services.AddScoped<IGenderRepository, EfGenderRepository>();
+            services.AddScoped<ISizeBs, EfSizeBs>();
+            services.AddScoped<ISizeRepository, EfSizeRepository>();
+            services.AddScoped<IColorBs, EfColorBs>();
+            services.AddScoped<IColorRepository, EfColorRepository>();
 
             services.AddSwaggerGen(c =>
             {

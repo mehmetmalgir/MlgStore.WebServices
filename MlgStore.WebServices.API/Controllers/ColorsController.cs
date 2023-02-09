@@ -9,35 +9,36 @@ namespace MlgStore.WebServices.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShippersController : ControllerBase
+    public class ColorsController : ControllerBase
     {
-        private readonly IShippersBs _sBs;
+        private readonly IColorBs _cBs;
         private readonly IMapper _mapper;
 
-        public ShippersController(IShippersBs sBs, IMapper mapper)
+        public ColorsController(IColorBs cBs, IMapper mapper)
         {
-            _sBs= sBs;
-            _mapper= mapper;
+            _cBs = cBs;
+            _mapper = mapper;
         }
 
-        [ProducesResponseType(typeof(List<ShipperGetDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<ColorGetDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [HttpGet]
-        public ActionResult<List<ShipperGetDto>> GetAllShippers()
+        public ActionResult<List<ColorGetDto>> GetColors()
         {
             try
             {
-                var shippers = _sBs.GetAllShippers(null);
-                var dto = _mapper.Map<List<ShipperGetDto>>(shippers);
-                return Ok(dto);
+                var colors = _cBs.GetColors();
+                var dtos = _mapper.Map<List<ColorGetDto>>(colors);
+                return Ok(dtos);
             }
             catch 
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
-                
             }
-            
+          
+
         }
+
 
 
 

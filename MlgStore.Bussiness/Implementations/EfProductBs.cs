@@ -9,11 +9,11 @@ using System.Text;
 
 namespace MlgStore.Bussiness.Implementations
 {
-    public class ProductBs : IProductBs
+    public class EfProductBs : IProductBs
     {
         private readonly IProductRepository _repo;
 
-        public ProductBs(IProductRepository repo)
+        public EfProductBs(IProductRepository repo)
         {
             _repo = repo;
         }

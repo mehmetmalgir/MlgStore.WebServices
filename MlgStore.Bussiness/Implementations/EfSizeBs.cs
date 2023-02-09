@@ -6,21 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using System.Threading;
 
 namespace MlgStore.Bussiness.Implementations
 {
-    public class ShippersBs : IShippersBs
+    public class EfSizeBs : ISizeBs
     {
-        private readonly IShippersRepository _repo;
+        private readonly ISizeRepository _repo;
 
-        public ShippersBs(IShippersRepository repo)
+        public EfSizeBs(ISizeRepository repo)
         {
-            _repo = repo;
+            _repo= repo;
         }
 
-
-        public List<Shippers> GetAllShippers(Expression<Func<Shippers, bool>> filter = null, params string[] includeList)
+        public List<Sizes> GetSizes(Expression<Func<Sizes, bool>> filter = null, params string[] includeList)
         {
             return _repo.GetAll(filter, includeList).ToList();
         }
