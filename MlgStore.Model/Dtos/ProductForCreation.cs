@@ -17,7 +17,7 @@ namespace MlgStore.Model.Dtos
         public int? Discount { get; set; }
         public bool DiscountAvailable { get; set; }
         public bool CurrentOrder { get; set; }
-        public int GenderID { get; set; }
+        public int? GenderID { get; set; }
         public string ProductPhoto { get; set; }
 
 

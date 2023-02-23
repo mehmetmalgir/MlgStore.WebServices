@@ -18,13 +18,15 @@ namespace MlgStore.Model.Entities
         public int? Discount { get; set; }
         public bool DiscountAvailable { get; set; }
         public bool CurrentOrder { get; set; }
-        public int GenderID { get; set; }
+        public int? GenderID { get; set; }
 
         public Categories Category { get; set; }
         public ProductPhotos ProductPhotos { get; set; }
         public Sizes Size { get; set; }
         public Colors Color { get; set; }
         public Genders Gender { get; set; }
+
+
 
 
 

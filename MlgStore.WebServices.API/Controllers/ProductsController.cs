@@ -256,8 +256,9 @@ namespace MlgStore.WebServices.API.Controllers
             _pBs.Update(productDto);
         }
 
+        [ProducesResponseType(typeof(ProductGetDto), StatusCodes.Status201Created)]
         [HttpPost]
-        public ActionResult<List<ProductGetDto>> AddProduct([FromQuery]ProductForCreation dto)
+        public ActionResult<ProductGetDto> AddProduct([FromBody]ProductForCreation dto)
         {
             var product = _mapper.Map<Products>(dto);
 
