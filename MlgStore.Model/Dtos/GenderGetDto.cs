@@ -7,6 +7,7 @@ namespace MlgStore.Model.Dtos
 {
     public class GenderGetDto : IDto
     {
+        public int Id { get; set; }
         public string GenderType { get; set; }
     }
 }
