@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MlgStore.Bussiness.Contracts;
 using MlgStore.Model.Dtos;
+using MlgStore.Model.Entities;
 using System.Collections.Generic;
 
 namespace MlgStore.WebServices.API.Controllers
@@ -39,7 +40,16 @@ namespace MlgStore.WebServices.API.Controllers
 
         }
 
+        [ProducesResponseType(typeof(CategoryGetDto), StatusCodes.Status201Created)]
+        [HttpPost]        
+        public ActionResult<CategoryGetDto> AddCategory([FromBody]CategoryForCreation dto)
+        {
+            var category = _mapper.Map<Categories>(dto);
+            var inserted = _cBs.AddCategory(category);
+            var insertedDto = _mapper.Map<CategoryGetDto>(inserted);
+            return Created("", insertedDto);
 
+        }
 
 
 

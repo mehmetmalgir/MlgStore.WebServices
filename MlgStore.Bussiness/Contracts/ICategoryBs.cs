@@ -9,6 +9,7 @@ namespace MlgStore.Bussiness.Contracts
     public interface ICategoryBs
     {
         List<Categories> GetCategories(Expression<Func<Categories,bool>> filter = null, params string[] includeList);
+        Categories AddCategory(Categories entity);
 
     }
 }

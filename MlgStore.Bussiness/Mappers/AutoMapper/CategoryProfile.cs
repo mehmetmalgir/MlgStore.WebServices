@@ -13,6 +13,7 @@ namespace MlgStore.Bussiness.Mappers.AutoMapper
         {
             CreateMap<Categories, CategoryGetDto>();
 
+            CreateMap<CategoryForCreation, Categories>();
 
         }
 

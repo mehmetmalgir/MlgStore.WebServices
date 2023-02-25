@@ -18,6 +18,10 @@ namespace MlgStore.Bussiness.Implementations
             _repo= repo;
         }
 
+        public Categories AddCategory(Categories entity)
+        {
+            return _repo.Add(entity);
+        }
 
         public List<Categories> GetCategories(Expression<Func<Categories, bool>> filter = null, params string[] includeList)
         {
