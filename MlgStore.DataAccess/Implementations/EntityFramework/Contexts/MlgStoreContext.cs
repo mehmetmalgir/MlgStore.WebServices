@@ -10,7 +10,7 @@ namespace MlgStore.DataAccess.Implementations.EntityFramework.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-NU8CUCN;database=MlgStoreDb;trusted_connection=true;");
+            optionsBuilder.UseSqlServer("server=DESKTOP-J3DG8F2;database=MlgStoreDb;trusted_connection=true;");
         }
 
         public DbSet<Categories> Categories { get; set; }
@@ -27,8 +27,8 @@ namespace MlgStore.DataAccess.Implementations.EntityFramework.Contexts
         public DbSet<ShipperUsers> ShipperUsers { get; set; }
         public DbSet<Sizes> Sizes { get; set; }
         public DbSet<UsersAdmin> UsersAdmin { get; set; }
-       
-        
+
+
 
 
     }
