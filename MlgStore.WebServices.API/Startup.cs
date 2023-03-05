@@ -45,8 +45,10 @@ namespace MlgStore.WebServices.API
             services.AddScoped<ISizeRepository, EfSizeRepository>();
             services.AddScoped<IColorBs, EfColorBs>();
             services.AddScoped<IColorRepository, EfColorRepository>();
+			services.AddScoped<IComplaintsBs, EfComplaintsBs>();
+			services.AddScoped<IComplaintsRepository, EfComplaintsRepository>();
 
-            services.AddSwaggerGen(c =>
+			services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
