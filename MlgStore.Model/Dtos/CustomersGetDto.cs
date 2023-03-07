@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MlgStore.Model.Entities
+namespace MlgStore.Model.Dtos
 {
-    public class Customers : BaseEntity
+    public class CustomersGetDto : IDto
     {
-        
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address1 { get; set; }
@@ -16,9 +16,11 @@ namespace MlgStore.Model.Entities
         public string District { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }       
+        public string Password { get; set; }     
         public DateTime? RegistirationDate { get; set; }
-       
+
+
+
 
     }
 }
