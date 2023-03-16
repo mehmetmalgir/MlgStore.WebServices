@@ -49,6 +49,8 @@ namespace MlgStore.WebServices.API
 			services.AddScoped<IComplaintsRepository, EfComplaintsRepository>();
             services.AddScoped<ICustomerBs, EfCustomersBs>();
             services.AddScoped<ICustomersRepository, EfCustomersRepository>();
+            services.AddScoped<IOrdersBs, EfOrdersBs>();
+            services.AddScoped<IOrdersRepository, EfOrdersRepository>();
 
 
             services.AddSwaggerGen(c =>
